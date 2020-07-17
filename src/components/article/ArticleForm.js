@@ -21,9 +21,16 @@ const ArticleForm = props => {
 
    /*  Local method for validation, set loadingStatus, create article object, invoke the ArticleManager post method, and redirect to the full article list */
 
-//   useEffect(() => {
-//       ArticleManager.
-//   })
+  useEffect(() => {
+      ArticleManager.getAll(props.articles)
+        .then(article => {
+            setArticle ({
+                title: article.title,
+                synopsis: article.synopsis,
+                url: article.url
+            })
+        });
+  }, [props.articles])
 
     const constructNewArticle = e => {
         e.preventDefault();

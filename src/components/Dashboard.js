@@ -4,7 +4,7 @@ import MessageCard from "./message/MessageCard";
 import ArticleList from "./article/ArticleList";
 import ArticleForm from "./article/ArticleForm";
 
-const ApplicationViews = (props) => {
+const ApplicationViews = () => {
     return (
 		<React.Fragment>
 
@@ -14,7 +14,7 @@ const ApplicationViews = (props) => {
 					return <> 
                     <MessageCard />
 					<ArticleList />
-					<ArticleForm { ...props } />
+					<ArticleForm />
                     </>
 				}}/>
             
