@@ -9,7 +9,9 @@ const ApplicationViews = () => {
 			<Route
 				path="/"
 				render={() => {
-					return <> <MessageCard /> </>
+					return <> 
+                    <MessageCard /> 
+                    </>
 				}}/>
             
         </React.Fragment>
