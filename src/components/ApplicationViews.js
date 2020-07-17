@@ -1,6 +1,6 @@
 import { Route } from "react-router-dom";
 import React from "react";
-import MessageCard from "./message/MessageCard";
+import MessageList from "./message/MessageList";
 
 const ApplicationViews = () => {
     return (
@@ -9,8 +9,8 @@ const ApplicationViews = () => {
 			<Route
 				path="/"
 				render={() => {
-					return <> 
-                    <MessageCard /> 
+					return <>
+                    <MessageList /> 
                     </>
 				}}/>
             

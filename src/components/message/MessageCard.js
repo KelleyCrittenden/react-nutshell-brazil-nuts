@@ -1,11 +1,24 @@
 import React from "react";
 import "./Message.css"
 
-//img src={require...} means {} is used to wrap the source since its local... "require" is used because we are using "webpack" and it is a "commonjs" ... 
-//"require" is a function that is a commonjs ?????????? and actually imports modules or other dependant files in the directory (sich as photos)
-const MessageCard = () => {
+//Created by: Brett Stoudt
+//function that created indivdual cards for each message in the database
+// API request of messages expands on users table.
+const MessageCard = (props) => {
+    //const handleEdit
+    
   return (
-      <div> Hello World</div>
+    <div className="card">
+      <div className="card-content">
+        <h3>Name: <span className="card-petname">
+        {props.message.user.username}
+        </span></h3> <p><span>{props.message.message}</span></p>
+
+        <span>
+            <button type="button" onClick={props.handleEdit} id="messageEdit">Edit</button>
+        </span>
+      </div>
+    </div>
   )
 }
 export default MessageCard
