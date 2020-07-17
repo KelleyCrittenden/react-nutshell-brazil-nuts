@@ -1,6 +1,7 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import MessageCard from "./message/MessageCard";
+import ArticleCard from "./article/ArticleCard";
 
 const ApplicationViews = () => {
     return (
@@ -10,7 +11,8 @@ const ApplicationViews = () => {
 				path="/"
 				render={() => {
 					return <> 
-                    <MessageCard /> 
+                    <MessageCard />
+					<ArticleCard />
                     </>
 				}}/>
             
