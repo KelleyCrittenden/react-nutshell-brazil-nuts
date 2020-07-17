@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MessageCard from "./MessageCard";
+import MessageForm from "./MessageForm";
 import MessageManager from "../../modules/MessageManager";
 //Created by: Brett Stoudt
 
@@ -32,7 +33,7 @@ const MessageList = (props) => {
           {messages.map(message => <MessageCard key={message.id} message={message} {...props}/>)}
         </div>
         <section className="section-content">
-         
+         <MessageForm />
         </section>
       </>
     )

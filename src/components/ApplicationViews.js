@@ -3,6 +3,7 @@ import React from "react";
 import MessageList from "./message/MessageList";
 
 const ApplicationViews = () => {
+    
     return (
 		<React.Fragment>
 
