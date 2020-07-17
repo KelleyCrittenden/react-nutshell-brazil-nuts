@@ -1,10 +1,10 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import MessageCard from "./message/MessageCard";
-import ArticleCard from "./article/ArticleCard";
+import ArticleList from "./article/ArticleList";
 import ArticleForm from "./article/ArticleForm";
 
-const ApplicationViews = () => {
+const ApplicationViews = (props) => {
     return (
 		<React.Fragment>
 
@@ -13,8 +13,8 @@ const ApplicationViews = () => {
 				render={() => {
 					return <> 
                     <MessageCard />
-					<ArticleCard />
-					<ArticleForm />
+					<ArticleList />
+					<ArticleForm { ...props } />
                     </>
 				}}/>
             

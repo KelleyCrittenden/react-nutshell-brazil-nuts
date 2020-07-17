@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-// import ArticleManager from "../../modules/ArticleManager";
+import React, { useState, useEffect } from "react";
+import ArticleManager from "../../modules/ArticleManager";
 import "./ArticleForm.css";
 
 
-const ArticleForm = () => {
+
+const ArticleForm = props => {
     const [article, setArticle] = useState({
-        "title": "",
-        "synopsis": "",
-        "url": "",
+        title: "",
+        synopsis: "",
+        url: "",
     });
     const [isLoading, setIsLoading] = useState(false);
+    //   isLoading is a boolean value that will indicate whether or not the component is loading. A value of true should disable the button and a value of false should enable it. By putting isLoading in the component's state, we can trigger a re-render by changing its value.
 
     const handleFieldChange = e => {
         const stateToChange = { ...article };
@@ -19,6 +21,10 @@ const ArticleForm = () => {
 
    /*  Local method for validation, set loadingStatus, create article object, invoke the ArticleManager post method, and redirect to the full article list */
 
+//   useEffect(() => {
+//       ArticleManager.
+//   })
+
     const constructNewArticle = e => {
         e.preventDefault();
         if (article.title === "" || article.synopsis === "" || article.url === "") {
@@ -26,7 +32,8 @@ const ArticleForm = () => {
         } else {
             setIsLoading(true);
             // Create the article and redirect user to article list
-
+            ArticleManager.post(article)
+            .then(setArticle);
         }
     };
 
@@ -36,14 +43,15 @@ const ArticleForm = () => {
       <form>
         <fieldset>
           <div className="formgrid">
+            <label htmlFor="title"> Title </label>  
             <input
               type="text"
               required
               onChange={handleFieldChange}
               id="title"
-              placeholder="Title:"
+              placeholder="Title"
             />
-            <label htmlFor="title">Title:</label>
+            <label htmlFor="synopsis"> Synopsis </label>
             <input
               type="text"
               required
@@ -51,21 +59,20 @@ const ArticleForm = () => {
               id="synopsis"
               placeholder="Synopsis"
             />
-            <label htmlFor="synopsis">Synopsis:</label>
+            <label htmlFor="url"> Url </label>
             <input
               type="text"
               required
               onChange={handleFieldChange}
               id="url"
               placeholder="url" />
-            <label htmlFor="url">Url:</label>
           </div>
           <div className="alignRight">
             <button
               type="button"
               disabled={isLoading}
               onClick={constructNewArticle}
-            >Submit</button>
+            >Save Article</button>
           </div>
         </fieldset>
       </form>
