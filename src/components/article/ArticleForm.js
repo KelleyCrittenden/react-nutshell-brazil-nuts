@@ -19,18 +19,54 @@ const ArticleForm = props => {
         setArticle(stateToChange);
     };
 
+    // timestamp
+
+    // const timestamp = Date.now(); // This would be the timestamp you want to format
+
+    // console.log(new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp));
+
+    // export function currentDateTime(currentDate) {
+    //     let generateCurrentDateTime;
+    //     //gets current date and time
+        
+    //     //get current time in user location based on locale date format
+    //     let currentTime = new Date(currentDate).toLocaleTimeString(undefined, {
+    //         hour: "2-digit",
+    //         minute: "2-digit"
+    //     })
+    
+    //     //get today's date
+    //     let date = new Date(currentDate).getDate();
+    //     //get current month
+    //     let month = new Date(currentDate).getMonth();
+    //     //get current year
+    //     let year = new Date(currentDate).getFullYear();
+    
+    //     //list of months
+    //     const months = [
+    //         "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+    //     ]
+        
+    //     //this will generate string of the current month, date, year @ and current time in format specified
+    //     generateCurrentDateTime = months[month] + " " + date + "," + year + " @ " + currentTime;
+        
+    //     console.log(generateCurrentDateTime)
+    //     return generateCurrentDateTime
+    // }
+
+
    /*  Local method for validation, set loadingStatus, create article object, invoke the ArticleManager post method, and redirect to the full article list */
 
-  useEffect(() => {
-      ArticleManager.getAll(props.articles)
-        .then(article => {
-            setArticle ({
-                title: article.title,
-                synopsis: article.synopsis,
-                url: article.url
-            })
-        });
-  }, [props.articles])
+//   useEffect(() => {
+//       ArticleManager.getAll(props.articles)
+//         .then(article => {
+//             setArticle ({
+//                 title: article.title,
+//                 synopsis: article.synopsis,
+//                 url: article.url
+//             })
+//         });
+//   }, [props.articles])
 
     const constructNewArticle = e => {
         e.preventDefault();
@@ -77,6 +113,7 @@ const ArticleForm = props => {
           <div className="alignRight">
             <button
               type="button"
+              id="saveArticleButton"
               disabled={isLoading}
               onClick={constructNewArticle}
             >Save Article</button>
