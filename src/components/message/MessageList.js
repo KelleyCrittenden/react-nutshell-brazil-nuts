@@ -30,7 +30,7 @@ const MessageList = (props) => {
     return (
         <>
         <div className="container-cards">
-          {messages.map(message => <MessageCard key={message.id} message={message} {...props}/>)}
+          {messages.map(message => <MessageCard key={message.id} message={message} handleEdit={props.updateExistingMessage} {...props}/>)}
         </div>
         <section className="section-content">
          <MessageForm />
