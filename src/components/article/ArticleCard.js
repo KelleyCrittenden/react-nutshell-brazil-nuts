@@ -15,14 +15,15 @@ const ArticleCard = (props) => {
                     </span>
                 </h3>
                 <p>
+                    {(props.article.timestamp)}
+                </p>
+                <p>
                     {(props.article.synopsis)}
                 </p>
                 <p>
                     Url: {(props.article.url)}
                 </p>
-                <p>
-                    {(props.article.timestamp)}
-                </p>
+                
                 <button 
                     className="delete" 
                     type="button"
