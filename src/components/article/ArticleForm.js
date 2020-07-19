@@ -4,12 +4,13 @@ import "./ArticleForm.css";
 
 
 
+
 const ArticleForm = props => {
     const [article, setArticle] = useState({
         title: "",
         synopsis: "",
         url: "",
-        date: new Date().toISOString()
+        timestamp: new Date().toISOString()
     });
     const [isLoading, setIsLoading] = useState(false);
     //   isLoading is a boolean value that will indicate whether or not the component is loading. A value of true should disable the button and a value of false should enable it. By putting isLoading in the component's state, we can trigger a re-render by changing its value.
@@ -41,13 +42,13 @@ const ArticleForm = props => {
             alert("Please provide input to all fields");
         } else {
             setIsLoading(true);
-
             // code for adding a timestamp 
-
+            // const timeDate = new Date(this.props.timeDate);
+            // const readableTimeDate = timeDate.toDateString();
+            
             // Create the article and redirect user to article list
             ArticleManager.post(article)
-            
-            
+                // .then(() => props.history.push("/articles"))
             ;
         }
     };
