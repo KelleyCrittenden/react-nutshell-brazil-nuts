@@ -13,11 +13,11 @@ const ApplicationViews = () => {
 				render={props => {
 					return <> 
                     <MessageCard />
-					<ArticleForm
-					{ ...props } />
 					<ArticleList
 					{ ...props } />
                     </>
+
+			
 				}}/>
             
         </React.Fragment>

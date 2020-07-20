@@ -18,13 +18,13 @@
 
 
 
-    // const getArticles = () => {
-    //     ArticleManager.getAll()
-    //         .then(articlesFromAPI => {
-    //             setArticle(articlesFromAPI);
-    //         });
-    // }
+    const getArticles = () => {
+        ArticleManager.getAll()
+            .then(articlesFromAPI => {
+                setArticle(articlesFromAPI);
+            });
+    }
 
-    // useEffect(() => {
-    //     getArticles();
-    // }, []);
+    useEffect(() => {
+        getArticles();
+    }, []);
