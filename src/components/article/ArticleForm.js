@@ -8,10 +8,13 @@ const ArticleForm = props => {
         title: "",
         synopsis: "",
         url: "",
-        timestamp: new Date().toISOString()
+        timestamp:  new Date().toISOString()
     });
     const [isLoading, setIsLoading] = useState(false);
     //   isLoading is a boolean value that will indicate whether or not the component is loading. A value of true should disable the button and a value of false should enable it. By putting isLoading in the component's state, we can trigger a re-render by changing its value.
+
+    const [showForm, setShowForm] = useState(false);
+
 
     // handleFieldChange watches the 
     const handleFieldChange = e => {
@@ -20,7 +23,15 @@ const ArticleForm = props => {
         setArticle(stateToChange);
     };
 
+    const handleClick = e => {
+        setShowForm(!showForm);
+    }
+
     /*  Local method for validation, set loadingStatus, create article object, invoke the ArticleManager post method, and redirect to the full article list */
+
+    // let Timestamp = (props.article.timestamp)
+    // let uglyTimestamp = Math.floor(Date.now(Timestamp)/1000);
+    // let readableTimestamp = new Date (uglyTimestamp*1000);
 
     const constructNewArticle = e => {
         e.preventDefault();
@@ -28,14 +39,15 @@ const ArticleForm = props => {
             alert("Please provide input to all fields");
         } else {
             setIsLoading(true);
-           
+
             // Create the article and redirect user to article list. 
             ArticleManager.post(article)
-            // The trick here is to add props to getArticles(). This is made possible by adding an <ArticleForm> tag into the rendered return in the ArticleList component. And then using  getArticles={getArticles}  as a key/value pair.
-                .then(() => 
-                    {props.getArticles()
+                // The trick here is to add props to getArticles(). This is made possible by adding an <ArticleForm> tag into the rendered return in the ArticleList component. And then using  getArticles={getArticles}  as a key/value pair.
+                .then(() => {
+                    props.getArticles()
                     setIsLoading(false)
-                });    
+
+                });
         }
     };
 
@@ -44,10 +56,11 @@ const ArticleForm = props => {
             <div>
                 <button type="button"
                     id="showHiddenArticlesButton"
+                    onClick={handleClick}
                 >
                     Add New Article
                 </button>
-                <form className="showContent">
+                <form className={ showForm ? 'show':'hidden'}>
                     <fieldset>
                         <div className="formgrid">
                             <label htmlFor="title"> Title </label>
@@ -81,6 +94,7 @@ const ArticleForm = props => {
                                 disabled={isLoading}
                                 onClick={constructNewArticle}
                             >Save Article</button>
+                            <input type="reset" defaultValue="Reset" />
                         </div>
                     </fieldset>
                 </form>
