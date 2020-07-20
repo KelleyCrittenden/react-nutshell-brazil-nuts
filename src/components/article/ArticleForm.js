@@ -28,11 +28,12 @@ const ArticleForm = props => {
             alert("Please provide input to all fields");
         } else {
             setIsLoading(true);
-
+           
             // Create the article and redirect user to article list. 
             ArticleManager.post(article)
             // The trick here is to add props to getArticles(). This is made possible by adding an <ArticleForm> tag into the rendered return in the ArticleList component. And then using  getArticles={getArticles}  as a key/value pair.
-                .then(() => {props.getArticles()
+                .then(() => 
+                    {props.getArticles()
                     setIsLoading(false)
                 });    
         }

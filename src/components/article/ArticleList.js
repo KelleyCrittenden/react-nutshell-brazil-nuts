@@ -12,7 +12,7 @@ const ArticleList = (props) => {
 
     const getArticles = () => {
         
-        return ArticleManager.getAll()
+        ArticleManager.getAll()
         .then(articlesFromAPI => {
             setArticles(articlesFromAPI);
         }); 

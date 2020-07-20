@@ -15,3 +15,11 @@
         >
             Add New Article
     </button> */
+
+
+        //Function to clear form field after each click
+        const clearInputs = () => {
+            props.article = ""
+    
+        }
+        clearInputs();
