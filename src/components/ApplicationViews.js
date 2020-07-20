@@ -2,18 +2,19 @@ import { Route } from "react-router-dom";
 import React from "react";
 import MessageList from "./message/MessageList";
 
-const ApplicationViews = () => {
+const ApplicationViews = (props) => {
     
     return (
 		<React.Fragment>
 
 			<Route
 				path="/"
-				render={() => {
+				render={(props) => {
 					return <>
-                    <MessageList /> 
+                    <MessageList {...props}  /> 
                     </>
 				}}/>
+
             
         </React.Fragment>
 	);

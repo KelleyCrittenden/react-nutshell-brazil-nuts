@@ -3,13 +3,13 @@ import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
 
 
-const Nutshell = () => {
-    
+const Nutshell = (props) => {
+
 return (
     
     <>
 
-      <ApplicationViews />
+      <ApplicationViews {...props} />
 
 
     </>

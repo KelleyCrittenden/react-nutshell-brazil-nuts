@@ -4,7 +4,7 @@ import "./MessageForm.css"
 
 const MessageEditForm = props => {
   //include additional table to include as a paramater to expect in the state with useState([])
-  const [message, setMessage] = useState({ message: "", userID: "", timestamp: ""});
+  const [message, setMessage] = useState({ id: props.id, message: props.message, userId: props.userId, timestamp: props.timestamp});
   const [isLoading, setIsLoading] = useState(false);
 
 
@@ -21,14 +21,14 @@ const MessageEditForm = props => {
     // This is an edit, so we had an additional table included we would need the ...Id here as well as our state
          //employeeId: parseInt(message.employeeId)
     const editedMessage = {
-      id: props.match.params.messageId,
+      id: message.messageId,
       message: message.message,
-      userId: message.userID,
+      userId: message.userId,
       timestamp: message.timestamp,
     };
 
     MessageManager.update(editedMessage)
-      .then(() => setMessage)
+      .then(() => props.setMessage)
   }
   // gets messages, but also needs to get employees
   useEffect(() => {

@@ -25,6 +25,18 @@ export default {
             },
             body: JSON.stringify(newMessage)
         }).then(data => data.json())
-    }
-
+    },
+    update(editedMessage) {
+        return fetch(`${remoteURL}/messages/${editedMessage.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(editedMessage)
+        }).then(data => data.json());
+    },
+    getFriendsData: (currentUserId) => {
+        return fetch(`http://localhost:8088/friends?followingId=${currentUserId}&_expand=user`)
+            .then(friends => friends.json())
+    },
 }

@@ -3,8 +3,12 @@ import MessageManager from '../../modules/MessageManager';
 import './MessageForm.css'
 
 const MessageForm = (props) => {
-    const [message, setMessage] = useState({ id: "", message: "hello", userId: 1, timestamp: Date.now() });
+    const [message, setMessage] = useState({ id: "", message: "hi", userId: 1, timestamp: Date.now() });
+
     const [isLoading, setIsLoading] = useState(false);
+
+
+
 
     const handleFieldChange = evt => {
     
@@ -18,7 +22,6 @@ const MessageForm = (props) => {
       stateToChange[evt.target.id] = evt.target.value;
       setMessage(stateToChange);
     };
-    
 
 
   /*  Local method for validation, set loadingStatus, create message object, invoke the MessageManager post method, and redirect to the full message list
@@ -29,16 +32,22 @@ const MessageForm = (props) => {
       window.alert("You got to say something to be heard!");
     } else {
       setIsLoading(true);
-      // Create the message and redirect user to message list
+      // Create the message
       MessageManager.post(message)
-        .then(() => 
-        (setMessage));
+      .then(() =>{
+        //re-render the parent componet(MessageList) my invoking the function passed in as props.
+        //set the is loading to false to keep the button from being clicked again 
+        props.getMessages() 
+        setIsLoading(false)}
+    );
+
     }
   };
 
-  const emptyMessage = (props) => {
-    if (setMessage.id !== "") {
-      console.log("this is first emptyMessage",message.message)
+
+  const messageInput = () => {
+    if (setMessage.id === "") {
+      console.log("this is editMessage",message.message)
     return (
       <>
         <form>
@@ -49,7 +58,7 @@ const MessageForm = (props) => {
                 required
                 onChange={handleFieldChange}
                 id="message"
-                placeholder="Start Typing!"
+                value={message.message}
               />
               <label htmlFor="message">Message</label>
              
@@ -76,7 +85,7 @@ const MessageForm = (props) => {
                 required
                 onChange={handleFieldChange}
                 id="message"
-                value={message.message}
+                placeholder="Start Typing!"
               />
               <label htmlFor="message">Message</label>
              
@@ -95,7 +104,7 @@ const MessageForm = (props) => {
   }
 
   return (
-    emptyMessage()
+    messageInput()
     
   );
 };
