@@ -3,10 +3,11 @@ import Dashboard from "./Dashboard";
 import "./Nutshell.css";
 
 
-const Nutshell = () => {
+const Nutshell = (props) => {
 return (
     <>
-      <Dashboard />
+      <Dashboard
+      { ...props } />
     </>
   );
 };

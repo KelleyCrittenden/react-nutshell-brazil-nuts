@@ -30,7 +30,7 @@ const ArticleList = (props) => {
     // Use map() to "loop over" the articles array to show a list of article cards
     return (
 
-        <>   
+        <>  
             <div className="container-cards">
                 {articles.map(article =>
                     <ArticleCard

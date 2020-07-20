@@ -1,18 +1,30 @@
 
-// Timestamp 
+     // toggle hidden content form
+        // const [visible, setVisible] = useState(false);
+        // const onClick = () => setVisible(true)
 
-// export default Timestamp() 
 
-// let date = new Date('2013-08-03T02:00:00Z');
-// let year = date.getFullYear();
-// let month = date.getMonth() + 1;
-// let dt = date.getDate();
+    // code for adding a timestamp 
+        // const timeDate = new Date(this.props.timeDate);
+        // const readableTimeDate = timeDate.toDateString();   
 
-// if (dt < 10) {
-//     dt = '0' + dt;
-// }
-// if (month < 10) {
-//     month = '0' + month;
-// }
-// return year+'-' + month + '-'+dt
- 
+
+    /* <button type="submit"
+            id="showHiddenArticlesButton"
+            // onClick={onClick}
+        >
+            Add New Article
+    </button> */
+
+
+
+    // const getArticles = () => {
+    //     ArticleManager.getAll()
+    //         .then(articlesFromAPI => {
+    //             setArticle(articlesFromAPI);
+    //         });
+    // }
+
+    // useEffect(() => {
+    //     getArticles();
+    // }, []);

@@ -9,12 +9,14 @@ const ApplicationViews = () => {
 		<React.Fragment>
 
 			<Route
-				path="/"
-				render={() => {
+				exact path="/"
+				render={props => {
 					return <> 
                     <MessageCard />
-					<ArticleForm />
-					<ArticleList />
+					<ArticleForm
+					{ ...props } />
+					<ArticleList
+					{ ...props } />
                     </>
 				}}/>
             

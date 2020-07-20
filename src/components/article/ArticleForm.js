@@ -21,21 +21,6 @@ const ArticleForm = props => {
         setArticle(stateToChange);
     };
 
-    // toggle hidden content form
-        // const [visible, setVisible] = useState(false);
-        // const onClick = () => setVisible(true)
-
-
-        // const getArticles = () => {
-        //     ArticleManager.getAll()
-        //         .then(articlesFromAPI => {
-        //             setArticle(articlesFromAPI);
-        //         });
-        // }
-
-        // useEffect(() => {
-        //     getArticles();
-        // }, []);
 
         /*  Local method for validation, set loadingStatus, create article object, invoke the ArticleManager post method, and redirect to the full article list */
 
@@ -45,26 +30,21 @@ const ArticleForm = props => {
                 alert("Please provide input to all fields");
             } else {
                 setIsLoading(true);
-                // code for adding a timestamp 
-                // const timeDate = new Date(this.props.timeDate);
-                // const readableTimeDate = timeDate.toDateString();
-
+               
                 // Create the article and redirect user to article list
                 ArticleManager.post(article)
-                    .then(setArticle);
+                .then(() => props.history.push("/"));
             }
         };
 
         return (
-
             <>
                 <div>
-                    {/* <button type="submit"
+                    <button type="button"
                         id="showHiddenArticlesButton"
-                        // onClick={onClick}
                     >
                         Add New Article
-                </button> */}
+                </button>
                     <form className="showContent">
                         <fieldset>
                             <div className="formgrid">
