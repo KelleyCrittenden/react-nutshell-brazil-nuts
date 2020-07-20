@@ -18,9 +18,10 @@ const Login = props => {
       "credentials",
       JSON.stringify(credentials)
     );
-    props.history.push("/");
   }
 
+
+      //form that will appear in DOM for user with input fields
   return (
     <form onSubmit={handleLogin}>
       <fieldset>
@@ -28,6 +29,8 @@ const Login = props => {
         <h3>Please sign in</h3>
 
         <div className="formgrid">
+
+          <label htmlFor="inputEmail">Email address</label>
 
           <input 
             onChange={handleFieldChange} 
@@ -37,7 +40,7 @@ const Login = props => {
             required="" 
             autoFocus="" />
 
-          <label htmlFor="inputEmail">Email address</label>
+         <label htmlFor="inputPassword">Password</label>
 
           <input 
             onChange={handleFieldChange} 
@@ -46,11 +49,9 @@ const Login = props => {
             placeholder="Password"
             required="" />
 
-          <label htmlFor="inputPassword">Password</label>
-
         </div>
 
-        <button type="submit">Sign in</button>
+        <button type="submit">Login</button>
 
       </fieldset>
     </form>
