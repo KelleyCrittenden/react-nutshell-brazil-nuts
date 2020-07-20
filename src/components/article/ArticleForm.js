@@ -21,80 +21,91 @@ const ArticleForm = props => {
         setArticle(stateToChange);
     };
 
+    // toggle hidden content form
+        // const [visible, setVisible] = useState(false);
+        // const onClick = () => setVisible(true)
 
 
-   /*  Local method for validation, set loadingStatus, create article object, invoke the ArticleManager post method, and redirect to the full article list */
+        // const getArticles = () => {
+        //     ArticleManager.getAll()
+        //         .then(articlesFromAPI => {
+        //             setArticle(articlesFromAPI);
+        //         });
+        // }
 
-//   useEffect(() => {
-//       ArticleManager.getAll(props.articles)
-//         .then(article => {
-//             setArticle ({
-//                 title: article.title,
-//                 synopsis: article.synopsis,
-//                 url: article.url
-//             })
-//         });
-//   }, [props.articles])
+        // useEffect(() => {
+        //     getArticles();
+        // }, []);
 
-    const constructNewArticle = e => {
-        e.preventDefault();
-        if (article.title === "" || article.synopsis === "" || article.url === "") {
-            alert("Please provide input to all fields");
-        } else {
-            setIsLoading(true);
-            // code for adding a timestamp 
-            // const timeDate = new Date(this.props.timeDate);
-            // const readableTimeDate = timeDate.toDateString();
-            
-            // Create the article and redirect user to article list
-            ArticleManager.post(article)
-                // .then(() => props.history.push("/articles"))
-            ;
-        }
-    };
+        /*  Local method for validation, set loadingStatus, create article object, invoke the ArticleManager post method, and redirect to the full article list */
 
-    return (
-        
-    <>
-      <form>
-        <fieldset>
-          <div className="formgrid">
-            <label htmlFor="title"> Title </label>  
-            <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="title"
-              placeholder="Title"
-            />
-            <label htmlFor="synopsis"> Synopsis </label>
-            <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="synopsis"
-              placeholder="Synopsis"
-            />
-            <label htmlFor="url"> Url </label>
-            <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="url"
-              placeholder="url" />
-          </div>
-          <div className="alignRight">
-            <button
-              type="button"
-              id="saveArticleButton"
-              disabled={isLoading}
-              onClick={constructNewArticle}
-            >Save Article</button>
-          </div>
-        </fieldset>
-      </form>
-    </>
-    ); 
+        const constructNewArticle = e => {
+            e.preventDefault();
+            if (article.title === "" || article.synopsis === "" || article.url === "") {
+                alert("Please provide input to all fields");
+            } else {
+                setIsLoading(true);
+                // code for adding a timestamp 
+                // const timeDate = new Date(this.props.timeDate);
+                // const readableTimeDate = timeDate.toDateString();
+
+                // Create the article and redirect user to article list
+                ArticleManager.post(article)
+                    .then(setArticle);
+            }
+        };
+
+        return (
+
+            <>
+                <div>
+                    {/* <button type="submit"
+                        id="showHiddenArticlesButton"
+                        // onClick={onClick}
+                    >
+                        Add New Article
+                </button> */}
+                    <form className="showContent">
+                        <fieldset>
+                            <div className="formgrid">
+                                <label htmlFor="title"> Title </label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={handleFieldChange}
+                                    id="title"
+                                    placeholder="Title"
+                                />
+                                <label htmlFor="synopsis"> Synopsis </label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={handleFieldChange}
+                                    id="synopsis"
+                                    placeholder="Synopsis"
+                                />
+                                <label htmlFor="url"> Url </label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={handleFieldChange}
+                                    id="url"
+                                    placeholder="url" />
+                            </div>
+                            <div className="alignRight">
+                                <button
+                                    type="button"
+                                    id="saveArticleButton"
+                                    disabled={isLoading}
+                                    onClick={constructNewArticle}
+                                >Save Article</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </>
+        );
 };
+
 
 export default ArticleForm;

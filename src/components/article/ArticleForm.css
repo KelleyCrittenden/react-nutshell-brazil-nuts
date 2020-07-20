@@ -1,3 +1,8 @@
+button#showHiddenArticlesButton { 
+    background-color: cornflowerblue;
+    color: cornsilk;
+}
+
 fieldset {
     max-width: 40em;
     padding: 4px;
@@ -20,7 +25,7 @@ fieldset button {
     max-width: 9em;
     padding: .7em;
     margin: .3em auto;
-    background-color: firebrick;
+    background-color: gold;
     border: none;
     color: cornsilk;
     text-align: center;

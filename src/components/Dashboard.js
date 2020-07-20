@@ -13,8 +13,8 @@ const ApplicationViews = () => {
 				render={() => {
 					return <> 
                     <MessageCard />
-					<ArticleList />
 					<ArticleForm />
+					<ArticleList />
                     </>
 				}}/>
             

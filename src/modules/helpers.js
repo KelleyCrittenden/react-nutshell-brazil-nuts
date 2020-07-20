@@ -1,9 +1,5 @@
 
-// Timestamp Function
-
-// const Timestamp = (currentDate) => {
-//     let createNewTimestamp = 
-// }
+// Timestamp 
 
 // export default Timestamp() 
 
