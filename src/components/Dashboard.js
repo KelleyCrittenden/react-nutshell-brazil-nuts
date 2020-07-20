@@ -2,9 +2,8 @@ import { Route } from "react-router-dom";
 import React from "react";
 import MessageCard from "./message/MessageCard";
 import ArticleList from "./article/ArticleList";
-import ArticleForm from "./article/ArticleForm";
 
-const ApplicationViews = () => {
+const Dashboard = () => {
     return (
 		<React.Fragment>
 
@@ -16,12 +15,10 @@ const ApplicationViews = () => {
 					<ArticleList
 					{ ...props } />
                     </>
-
-			
 				}}/>
             
         </React.Fragment>
 	);
 };
 
-export default ApplicationViews;
+export default Dashboard;
