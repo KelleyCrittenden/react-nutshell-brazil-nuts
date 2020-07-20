@@ -32,6 +32,7 @@ const ArticleList = (props) => {
     return (
 
         <>  
+            {/* Add the <ArticleForm> tag here in the rendered return in the ArticleList component. And then use  getArticles={getArticles}  as a key/value pair. *Do not call the function here*   */}
             <ArticleForm
                 getArticles={getArticles} />
             <div className="container-cards">

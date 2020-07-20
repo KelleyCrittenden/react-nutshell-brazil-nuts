@@ -15,16 +15,3 @@
         >
             Add New Article
     </button> */
-
-
-
-    const getArticles = () => {
-        ArticleManager.getAll()
-            .then(articlesFromAPI => {
-                setArticle(articlesFromAPI);
-            });
-    }
-
-    useEffect(() => {
-        getArticles();
-    }, []);

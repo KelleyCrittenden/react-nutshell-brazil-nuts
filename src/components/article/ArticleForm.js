@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ArticleManager from "../../modules/ArticleManager";
 import "./ArticleForm.css";
-
 
 
 const ArticleForm = props => {
@@ -30,8 +29,9 @@ const ArticleForm = props => {
         } else {
             setIsLoading(true);
 
-            // Create the article and redirect user to article list
+            // Create the article and redirect user to article list. 
             ArticleManager.post(article)
+            // The trick here is to add props to getArticles(). This is made possible by adding an <ArticleForm> tag into the rendered return in the ArticleList component. And then using  getArticles={getArticles}  as a key/value pair.
                 .then(() => {props.getArticles()
                     setIsLoading(false)
                 });    
