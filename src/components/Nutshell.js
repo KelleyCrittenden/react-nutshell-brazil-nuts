@@ -1,5 +1,5 @@
 import React from "react";
-import ApplicationViews from "./ApplicationViews";
+import ApplicationViews from "./Dashboard";
 import "./Nutshell.css";
 
 

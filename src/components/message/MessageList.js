@@ -17,7 +17,7 @@ const MessageList = (props) => {
             setMessages(messageFromAPI)
         });
     };
-    
+
     //If getMessages chanages, re-render
     useEffect(() => {
         console.log("useEffect")
@@ -31,7 +31,7 @@ const MessageList = (props) => {
         <>
         <div className="container-cards">
           {messages.map(message => 
-            <MessageCard key={message.id} message={message} {...props}/>)}
+          <MessageCard key={message.id} message={message} {...props}/>)}
         </div>
         <section className="section-content">
           <MessageForm {...props} getMessages={getMessages} />

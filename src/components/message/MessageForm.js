@@ -3,7 +3,7 @@ import MessageManager from '../../modules/MessageManager';
 import './MessageForm.css'
 
 const MessageForm = (props) => {
-    const [message, setMessage] = useState({ id: "", message: "hi", userId: 1, timestamp: Date.now() });
+    const [message, setMessage] = useState({ id: "", message: "", userId: 1, timestamp: Date.now() });
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -11,7 +11,7 @@ const MessageForm = (props) => {
 
 
     const handleFieldChange = evt => {
-    
+
         console.log("what is evt", evt)
         //anytime you have an event all of the stuff is passed along 
         //state to change set equal to value and pass it in
@@ -46,7 +46,7 @@ const MessageForm = (props) => {
 
 
   const messageInput = () => {
-    if (setMessage.id === "") {
+    if (message.id !== "") {
       console.log("this is editMessage",message.message)
     return (
       <>
@@ -61,7 +61,7 @@ const MessageForm = (props) => {
                 value={message.message}
               />
               <label htmlFor="message">Message</label>
-             
+
             </div>
             <div className="alignRight">
               <button
@@ -88,7 +88,7 @@ const MessageForm = (props) => {
                 placeholder="Start Typing!"
               />
               <label htmlFor="message">Message</label>
-             
+
             </div>
             <div className="alignRight">
               <button
@@ -104,8 +104,31 @@ const MessageForm = (props) => {
   }
 
   return (
-    messageInput()
-    
+    <>
+    <form>
+      <fieldset>
+        <div className="formgrid">
+          <input
+            type="text"
+            required
+            onChange={handleFieldChange}
+            id="message"
+            placeholder="Start Typing!"
+          />
+          <label htmlFor="message">Message</label>
+
+        </div>
+        <div className="alignRight">
+          <button
+            type="button"
+            disabled={isLoading}
+            onClick={constructNewMessage}
+          >Submit</button>  
+        </div>
+      </fieldset>
+    </form>
+  </>
+
   );
 };
 
