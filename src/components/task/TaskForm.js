@@ -13,15 +13,22 @@ const TaskForm = props => {
       dueDate: "", 
       completed: false});
 
-    
+    const [isLoading, setIsLoading] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
+    const [showForm, setShowForm] = useState(false);
 
-  const handleFieldChange = e => {
-    const stateToChange = { ...task };
-    stateToChange[e.target.id] = e.target.value;
-    setTask(stateToChange);
-  };
+    const handleFieldChange = e => {
+        const stateToChange = { ...task };
+        stateToChange[e.target.id] = e.target.value;
+        setTask(stateToChange);
+    };
+
+    const handleClick = e => {
+        setShowForm(!showForm)
+    }
+
+
+
 
   const constructNewTask = e => {
     e.preventDefault();
@@ -34,12 +41,21 @@ const TaskForm = props => {
       .then(() => {props.getTasks()
       setIsLoading(false)
         });    
-    }
+       }
     };
 
   return (
     <>
-      <form>
+        <div>
+            <button type="button"
+                    id="addNewTaskButton"
+                    onClick={handleClick}>
+                    Add Task
+            </button>
+        </div>
+
+      <form className= {showForm? "show" : "hidden"}>
+
         <fieldset>
           <div className="formgrid">
 
@@ -51,6 +67,8 @@ const TaskForm = props => {
               onChange={handleFieldChange}
               id="name"
               placeholder="description of task"
+         
+              
             />
 
 
@@ -62,6 +80,7 @@ const TaskForm = props => {
               onChange={handleFieldChange}
               id="dueDate"
               placeholder="date to be completed"
+          
             />
           </div>
 
@@ -70,6 +89,7 @@ const TaskForm = props => {
               type="button"
               disabled={isLoading}
               onClick={constructNewTask}
+              onClick={handleClick}
             >Submit</button>
 
           </div>

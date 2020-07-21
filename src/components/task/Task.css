@@ -1,19 +1,17 @@
 .card {
+    /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 5px; 
+    border-radius: 5px; /* 5px rounded corners */
     background: aliceblue;
     margin-bottom: 2em;
     flex: 0 1 24%;
-    text-align: center;
   }
   
-  /* entire background */
   .card-content {
     padding: .5em;
   }
   
-  /* name background */
   .card-content h3 {
     margin-top: 0;
     margin-bottom: .5em;
@@ -21,16 +19,13 @@
     color: rgb(43, 112, 241);
   }
   
- 
   .card-content p {
     font-size: 80%;
     color: darkslategrey;
   }
   
-  
   .content-taskName {
     color: darkslategrey;
-    background-color: red;
   }
   
   .card button {
@@ -49,9 +44,4 @@
   
   .card button:hover {
     background-color: darkblue;
-  }
-  
-  .taskImage {
-      border-radius: 50%;
-      width: 100%;
   }

@@ -4,6 +4,7 @@
 
 import React from 'react'
 import TaskManger from '../../modules/TaskManager';
+import './Task.css'
 
 const TaskCard = props => {
 
@@ -11,11 +12,12 @@ const TaskCard = props => {
     TaskManger.completedTask(props.task)
       .then(() => props.getTasks())
   }
-  
+
   return (
+    <>
+    {props.task.completed ? null : 
     <div className="card">
 
-      {props.task.completed ? null : 
       
       <div className="card-content">
 
@@ -29,10 +31,10 @@ const TaskCard = props => {
             onClick={() => props.deleteTask(props.task.id)}>
             Delete</button>
 
-        <button 
+        {/* <button 
             type="button" 
             onClick={() => props.history.push(`/task/${props.task.id}/edit`)}>
-            Edit</button>
+            Edit</button> */}
 
         <input type="checkbox"
           required
@@ -44,8 +46,10 @@ const TaskCard = props => {
 
         <label>Completed</label>
 
-      </div>}
-    </div>
+      </div>
+    </div>}
+    </>
   )
 }
+
 export default TaskCard

@@ -5,6 +5,7 @@ import TaskCard from './TaskCard';
 import TaskManager from '../../modules/TaskManager';
 import TaskForm from "./TaskForm"
 
+
 const TaskList = (props) => {
   const [tasks, setTasks] = useState([]);
 
@@ -16,7 +17,8 @@ const TaskList = (props) => {
 
     const deleteTask = (id) => {
         TaskManager.delete(id)
-        .then(() => TaskManager.getAll().then(setTasks));
+        .then(() => TaskManager.getAll()
+        .then(setTasks));
     };
 
     useEffect(() => {
@@ -28,14 +30,6 @@ const TaskList = (props) => {
 
         <TaskForm 
             getTasks={getTasks} />
-
-        <section className="section-content">
-            <button type="button"
-                    className="btn"
-                    onClick={() => { props.history.push("/tasks/addtask") }}>
-                    Add New Task
-            </button>
-        </section>
 
         <div 
             className="container-cards">
