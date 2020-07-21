@@ -7,13 +7,13 @@ import TaskManager from '../../modules/TaskManager';
 import './TaskForm.css'
 
 
-const TaskForm = () => {
+const TaskForm = props => {
   const [task, setTask] = useState({ 
       name: "", 
       dueDate: "", 
       completed: false});
 
-    const [tasks, setTasks] = useState([]);
+    
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,12 +29,13 @@ const TaskForm = () => {
       window.alert("Please input a name and date for this task");
     } else {
       setIsLoading(true);
-      TaskManager.post(tasks)
-      .then(() => TaskManager.getAll()
-      .then(setTasks));
-    }
-  };
 
+      TaskManager.post(task)
+      .then(() => {props.getTasks()
+      setIsLoading(false)
+        });    
+    }
+    };
 
   return (
     <>

@@ -25,8 +25,9 @@ const TaskList = (props) => {
 
     return(
         <>
-        
-        <TaskForm />
+
+        <TaskForm 
+            getTasks={getTasks} />
 
         <section className="section-content">
             <button type="button"
