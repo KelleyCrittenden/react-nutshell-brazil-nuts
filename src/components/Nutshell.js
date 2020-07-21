@@ -1,7 +1,7 @@
 import React from "react";
 import Dashboard from "./Dashboard";
 import "./Nutshell.css";
-//import Login from "./auth/Login"
+import Login from "./auth/Login"
 
 
 
@@ -12,7 +12,7 @@ import "./Nutshell.css";
   
 // return (
 //     <>
-//           {isAuthenticated ? <Dashboard {...props} /> : <Login {...props}/>}
+//           {isAuthenticated ? <Login {...props} /> : <Dashboard {...props}/>}
           
 
 //     </>
@@ -21,15 +21,22 @@ import "./Nutshell.css";
 
 // export default Nutshell;
 
-const Nutshell = (props) => {
-return (
-    
-    <>
-      <Dashboard
-      { ...props } />
-    </>
-  );
-};
+const Nutshell = () => {
+  const isAuthenticated = () => sessionStorage.getItem("credentias") !==null;
 
+  const [hasUser, setHasUser] = useState(isAuthenticated());
+
+  const setUser = user => {
+    sessionStorage.setItem("credentials", json.stringifiy(user))
+    setHasUser(isAuthenticated())
+  };
+
+  return (
+    <>
+    <Login hasUser={hasUser}/>
+    <Dashboard hasUser={hasUser} setUser={setUser}/>
+    </>
+  )
+};
 
 export default Nutshell;
