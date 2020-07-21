@@ -27,8 +27,8 @@ const MessageCard = (props) => {
   // getFriends(props)
 
   const myFriend = {
-    userId: hasUser.id,
-    followingId: props.message.userId
+    userId: props.message.userId,
+    followingId: hasUser.id
   }
   const addFriend = evt => {
     // if (friends.followingId === "" ) {
