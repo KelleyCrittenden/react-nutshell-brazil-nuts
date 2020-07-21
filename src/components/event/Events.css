@@ -3,3 +3,8 @@
     font-size: large;
     background-color: #4A5C9B;
 }
+
+button#showHiddenEventsButton { 
+    background-color: cornflowerblue;
+    color: cornsilk;
+}

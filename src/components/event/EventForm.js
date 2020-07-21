@@ -34,7 +34,14 @@ const EventForm = props => {
 
     return (
         <>
-        <form>
+        <div>
+            <button type="button"
+                id="showHiddenEventsButton"
+            >
+                Add New Event
+            </button>
+        </div>
+        <form className="showContent">
             <fieldset>
             <div>
                 <label htmlFor="Name">Name: </label>
