@@ -1,12 +1,14 @@
 import React from "react";
-import ApplicationViews from "./ApplicationViews";
+import Dashboard from "./Dashboard";
 import "./Nutshell.css";
 
 
-const Nutshell = () => {
+const Nutshell = (props) => {
 return (
+    
     <>
-      <ApplicationViews />
+      <Dashboard
+      { ...props } />
     </>
   );
 };
