@@ -1,15 +1,14 @@
 import React from "react";
 import "./Banner.css"
+//import Login from "../auth/Login"
 
 
 const Banner = props => {
-         //clear the user then change the URL
-  const handleLogout = () => {
-        //came from the parent in dashboard.js
-    props.clearUser();
-    props.history.push('/');
-  }
-
+ //Log out button clears session storage
+  const handleLogout = (props) => {
+		sessionStorage.clear();
+		// {<Login />}
+	  }
   return (
     <header>
 
