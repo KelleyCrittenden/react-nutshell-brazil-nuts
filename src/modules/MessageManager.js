@@ -35,8 +35,22 @@ export default {
           body: JSON.stringify(editedMessage)
         }).then(data => data.json());
     },
+
+    //FriendsList
+    //followingId is our current user, userId is the user we can expand upon to view details from users table ..userId is a friend of the followingId and would be displayed on followingId's list
     getFriendsData: (currentUserId) => {
-        return fetch(`http://localhost:8088/friends?followingId=${currentUserId}&_expand=user`)
+        return fetch(`${remoteURL}/friends?followingId=${currentUserId}&_expand=user`)
             .then(friends => friends.json())
     },
+    //Add Friend on messages
+    newFriendsEntry: (friendsObject) => {
+        return fetch(`${remoteURL}/friends`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(friendsObject),
+        });
+    },
+    
 }

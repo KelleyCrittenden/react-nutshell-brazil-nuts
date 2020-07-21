@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
 import MessageManager from "../../modules/MessageManager";
+import '../Nutshell.css'
+
+
 //Created by: Brett Stoudt
 //MessageList is the parent component of MessageCard & MessageForm
 const MessageList = (props) => {
@@ -12,7 +15,7 @@ const MessageList = (props) => {
         console.log("Message List")
         // After the data comes back from the API, we
         //  use the setMessages function to update state
-        return MessageManager.getMessagesData().then(messageFromAPI => {
+         MessageManager.getMessagesData().then(messageFromAPI => {
             console.log("what is inital value", messageFromAPI)
             setMessages(messageFromAPI)
         });
@@ -29,9 +32,9 @@ const MessageList = (props) => {
     //display MessageForm Component as a child element to MessageList, making sure to include the props and the function to re-render the list by fetching is redeclaring the setMessage(invoked with the response)
     return (
         <>
-        <div className="container-cards">
+        <div className="messageList">
           {messages.map(message => 
-          <MessageCard key={message.id} message={message} {...props}/>)}
+          <MessageCard key={message.id} message={message} {...props} getMessages={getMessages}/>)}
         </div>
         <section className="section-content">
           <MessageForm {...props} getMessages={getMessages} />

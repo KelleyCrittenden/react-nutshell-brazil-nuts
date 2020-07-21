@@ -1,23 +1,24 @@
 import { Route } from "react-router-dom";
 import React from "react";
+import ArticleList from "./article/ArticleList";
 import MessageList from "./message/MessageList";
 
-const ApplicationViews = (props) => {
-    
+const Dashboard = () => {
     return (
 		<React.Fragment>
 
 			<Route
-				path="/"
-				render={(props) => {
-					return <>
-                    <MessageList {...props}  /> 
+				exact path="/"
+				render={props => {
+					return <> 
+                    <MessageList {...props} />
+					<ArticleList
+					{ ...props } />
                     </>
 				}}/>
-
             
         </React.Fragment>
 	);
 };
 
-export default ApplicationViews;
+export default Dashboard;

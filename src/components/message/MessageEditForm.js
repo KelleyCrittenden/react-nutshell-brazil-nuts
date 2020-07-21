@@ -6,7 +6,7 @@ const MessageEditForm = props => {
   //include additional table to include as a paramater to expect in the state with useState([])
   const [message, setMessage] = useState({ id: props.id, message: props.message, userId: props.userId, timestamp: props.timestamp});
   const [isLoading, setIsLoading] = useState(false);
-
+console.log("setMessage",setMessage)
 
   const handleFieldChange = evt => {
     const stateToChange = { ...message };
