@@ -71,6 +71,6 @@ fieldset .alignRight {
     text-align: right;
 }
 
-#saveArticleButton {
+#saveArticleButton, #resetButton {
     background-color: darkblue;
 }

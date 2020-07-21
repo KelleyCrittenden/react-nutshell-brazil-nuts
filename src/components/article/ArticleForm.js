@@ -95,7 +95,7 @@ const ArticleForm = props => {
                                 disabled={isLoading}
                                 onClick={constructNewArticle, handleClick}
                             >Save Article</button>
-                            <input type="reset" defaultValue="Reset" />
+                            <input type="reset" defaultValue="Reset" id="resetButton"/>
                         </div>
                     </fieldset>
                 </form>
