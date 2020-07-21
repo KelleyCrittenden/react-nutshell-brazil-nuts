@@ -12,18 +12,18 @@ const MessageList = (props) => {
 
     //Function to Handle API Call on messages that includes an expand on the users table to access username
     const getMessages = () => {
-        console.log("Message List")
+       // console.log("Message List")
         // After the data comes back from the API, we
         //  use the setMessages function to update state
          MessageManager.getMessagesData().then(messageFromAPI => {
-            console.log("what is inital value", messageFromAPI)
+         //   console.log("what is inital value", messageFromAPI)
             setMessages(messageFromAPI)
         });
     };
 
     //If getMessages chanages, re-render
     useEffect(() => {
-        console.log("useEffect")
+       // console.log("useEffect")
       getMessages()
     }, []);
 

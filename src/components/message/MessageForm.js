@@ -14,7 +14,7 @@ const MessageForm = (props) => {
         // message values are inside our state, so any change to those values causes setMessage to run with stateToChange passed through
         // it watches you type into the input and holds onto that as stateToChange and then when you hit enter it subbmits those and creates a new database item.
     const handleFieldChange = evt => {
-        console.log("what is evt", evt)
+        //console.log("what is evt", evt)
       const stateToChange = { ...singleMessage };
       console.log("stateToChange", stateToChange);
       stateToChange[evt.target.id] = evt.target.value;
@@ -45,7 +45,7 @@ const MessageForm = (props) => {
 
   const messageInput = () => {
     if (singleMessage.id !== "") {
-      console.log("this is editMessage",singleMessage.message)
+      //console.log("this is editMessage",singleMessage.message)
     return (
       <>
         <form>
@@ -72,7 +72,8 @@ const MessageForm = (props) => {
         </form>
       </>
     )
-    } else {console.log("this is emptyMessage",singleMessage.userId) 
+    } else {
+      //console.log("this is emptyMessage",singleMessage.userId) 
     return (
       <>
         <form>

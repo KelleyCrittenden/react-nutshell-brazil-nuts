@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+//import useState from "react";
 import "./Message.css"
 import messageEditForm from "./MessageEditForm"
 import MessageManager from "../../modules/MessageManager";
@@ -6,22 +7,22 @@ import MessageManager from "../../modules/MessageManager";
 //function that created indivdual cards for each message in the database
 // API request of messages expands on users table.
 const MessageCard = (props) => {
-  const [friends, setFriends] = useState([])  
+  //const [friends, setFriends] = useState([])  
   const hasUser = {
       id: 1
     }
     
-    const getFriends = () => {
-      console.log("Message List", props.message.userId)
-      // After the data comes back from the API, we
-      //  use the setMessages function to update state
-      return MessageManager.getFriendsData(props.message.userId).then(friendsFromAPI => {
-          console.log("what is inital value of get friends", friendsFromAPI)
-          if (hasUser.id === props.message.userId) {
-          setFriends(friendsFromAPI.userId)}
+  //   const getFriends = () => {
+  //     //console.log("Message List", props.message.userId)
+  //     // After the data comes back from the API, we
+  //     //  use the setMessages function to update state
+  //     return MessageManager.getFriendsData(props.message.userId).then(friendsFromAPI => {
+  //       //  console.log("what is inital value of get friends", friendsFromAPI)
+  //         if (hasUser.id === props.message.userId) {
+  //         setFriends(friendsFromAPI.userId)}
           
-      });
-  };
+  //     });
+  // };
 
   // getFriends(props)
 
@@ -49,8 +50,9 @@ const MessageCard = (props) => {
 
   }
   useEffect(() => {
-    console.log("useEffect")
-  getFriends(hasUser.id)
+    //console.log("useEffect")
+  props.getMessages()
+  // getFriends()
 }, []);
   return (
     <div className="card">
@@ -65,7 +67,7 @@ const MessageCard = (props) => {
             <button type="button" onClick={messageEditForm} id={`messageEdit${props.message.id}`}>Edit</button>
         </span>
         </>
-        ) : setFriends.userId !== hasUser.id ? (<><button type="button" onClick={addFriend} id="messageEdit">Add to Friends</button></>) : null}
+        ) : props.message.userId !== hasUser.id ? (<><button type="button" onClick={addFriend} id="messageEdit">Add to Friends</button></>) : null}
         {/* {props.message.userId !== friends ?  
          (
           <>
