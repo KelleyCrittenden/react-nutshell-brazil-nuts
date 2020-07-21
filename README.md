@@ -25,7 +25,7 @@ Concepts covered in this project include React, JSX, JavaScript, CSS, session st
 - Fetched message data from database to display on DOM
 - Created new form with the ability to post new data to database from DOM
 - Created delete button with the ability to delete events object in database from DOM
-- Linked messages to show messages from other user's
+- Linked messages to show messages from other users
 
 ## Kelley Crittenden
 - Created README file
