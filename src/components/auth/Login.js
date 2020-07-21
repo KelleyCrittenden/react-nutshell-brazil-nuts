@@ -13,11 +13,9 @@ const Login = props => {
         //storing email and password that User enters into session storage without database information at this step
   const handleLogin = (e) => {
     e.preventDefault();
+    console.log(credentials)
+    props.setUser(credentials);
 
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
   }
 
 
