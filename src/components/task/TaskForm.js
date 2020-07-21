@@ -1,4 +1,4 @@
-//Creating a form for the user to add a new task
+//Creating an form for the user to add a new task
 //Created by Kelley Crittenden
 
 
@@ -6,15 +6,15 @@ import React, { useState } from 'react';
 import TaskManager from '../../modules/TaskManager';
 import './TaskForm.css'
 
-
 const TaskForm = props => {
   const [task, setTask] = useState({ 
       name: "", 
       dueDate: "", 
       completed: false});
-
+        
     const [isLoading, setIsLoading] = useState(false);
 
+            //setting state for New Task Form
     const [showForm, setShowForm] = useState(false);
 
     const handleFieldChange = e => {
@@ -23,25 +23,24 @@ const TaskForm = props => {
         setTask(stateToChange);
     };
 
+            //click function to show form when new task button is clicked
     const handleClick = e => {
         setShowForm(!showForm)
     }
 
 
+    const constructNewTask = e => {
+        e.preventDefault();
+        if (task.name === "" || task.dueDate === "") {
+        window.alert("Please input a name and date for this task");
+        } else {
+        setIsLoading(true);
 
-
-  const constructNewTask = e => {
-    e.preventDefault();
-    if (task.name === "" || task.dueDate === "") {
-      window.alert("Please input a name and date for this task");
-    } else {
-      setIsLoading(true);
-
-      TaskManager.post(task)
-      .then(() => {props.getTasks()
-      setIsLoading(false)
-        });    
-       }
+        TaskManager.post(task)
+        .then(() => {props.getTasks()
+        setIsLoading(false)
+            });    
+        }
     };
 
   return (

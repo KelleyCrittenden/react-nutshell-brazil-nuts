@@ -15,7 +15,10 @@ const TaskCard = props => {
 
   return (
     <>
+        {/* Task Cards that have been marked as complete will not be displayed */}
+        
     {props.task.completed ? null : 
+
     <div className="card">
 
       
@@ -30,11 +33,6 @@ const TaskCard = props => {
             type="button" 
             onClick={() => props.deleteTask(props.task.id)}>
             Delete</button>
-
-        {/* <button 
-            type="button" 
-            onClick={() => props.history.push(`/task/${props.task.id}/edit`)}>
-            Edit</button> */}
 
         <input type="checkbox"
           required
