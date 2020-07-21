@@ -1,0 +1,5 @@
+.event-card:first-child {
+    font-weight: bold;
+    font-size: large;
+    background-color: #4A5C9B;
+}
