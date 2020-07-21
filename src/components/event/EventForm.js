@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import API from "../../modules/EventManager";
 
 const EventForm = props => {
+    const activeUserId = 1;
+
     const [event, setEvent] = useState({
+        userId: activeUserId,
         name: "",
         venue: "",
         date: "",
-        userId: parseInt(sessionStorage.getItem("userId"))
+        // userId: parseInt(sessionStorage.getItem("userId"))
     });
     
     const [isLoading, setIsLoading] = useState(false);

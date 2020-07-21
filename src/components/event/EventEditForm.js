@@ -2,42 +2,44 @@ import React, { useState, useEffect } from "react";
 import API from "../../modules/EventManager";
 
 const EventEditForm = props => {
-  const [event, setEvent] = useState({
-    name: "",
-    venue: "",
-    date: "",
-    userId: 1
-    // userId: sessionStorage.getItem("userId")
-  });
-  const [isLoading, setIsLoading] = useState(false);
+    const activeUserId = 1;
 
-  const handleFieldChange = evt => {
-    const stateToChange = { ...event };
-    stateToChange[evt.target.id] = evt.target.value;
-    setEvent(stateToChange);
-  };
+    const [event, setEvent] = useState({
+        name: "",
+        venue: "",
+        date: "",
+        userId: activeUserId
+        // userId: sessionStorage.getItem("userId")
+    });
+    const [isLoading, setIsLoading] = useState(false);
 
-  const updateExistingEvent = evt => {
-    evt.preventDefault();
-    setIsLoading(true);
-
-    const editedEvent = {
-      id: props.match.params.eventId,
-      name: event.name,
-      venue: event.venue,
-      date: event.date,
-      userId: event.userId
+    const handleFieldChange = evt => {
+        const stateToChange = { ...event };
+        stateToChange[evt.target.id] = evt.target.value;
+        setEvent(stateToChange);
     };
 
-    API.update(editedEvent).then(() => props.setEvent);
-  };
+    const updateExistingEvent = evt => {
+        evt.preventDefault();
+        setIsLoading(true);
 
-  useEffect(() => {
-    API.edit(props.match.params.eventId).then(event => {
-      setEvent(event);
-      setIsLoading(false);
-    });
-  }, []);
+        const editedEvent = {
+        id: props.match.params.eventId,
+        name: event.name,
+        venue: event.venue,
+        date: event.date,
+        userId: event.userId
+        };
+
+        API.update(editedEvent).then(() => props.setEvent);
+    };
+
+    useEffect(() => {
+        API.edit(props.match.params.eventId).then(event => {
+        setEvent(event);
+        setIsLoading(false);
+        });
+    }, []);
 
   return (
         <>
