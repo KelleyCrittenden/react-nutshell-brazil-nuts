@@ -4,8 +4,6 @@ import "./Article.css";
 
 // The job of this component is to display an article card. The code below defines what a single article card should look like.
 
-
-
 const ArticleCard = (props) => {
     return (
         <div className="card">

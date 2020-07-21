@@ -15,7 +15,6 @@ const ArticleForm = props => {
 
     const [showForm, setShowForm] = useState(false);
 
-
     // handleFieldChange watches the 
     const handleFieldChange = e => {
         const stateToChange = { ...article };
