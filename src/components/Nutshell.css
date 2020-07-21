@@ -55,3 +55,10 @@ img {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+
+.messagesList {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: scroll;
+}
