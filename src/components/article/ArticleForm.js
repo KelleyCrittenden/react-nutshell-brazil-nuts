@@ -13,6 +13,7 @@ const ArticleForm = props => {
     const [isLoading, setIsLoading] = useState(false);
     //   isLoading is a boolean value that will indicate whether or not the component is loading. A value of true should disable the button and a value of false should enable it. By putting isLoading in the component's state, we can trigger a re-render by changing its value.
 
+
     const [showForm, setShowForm] = useState(false);
 
     // handleFieldChange watches the 
@@ -21,6 +22,7 @@ const ArticleForm = props => {
         stateToChange[e.target.id] = e.target.value;
         setArticle(stateToChange);
     };
+
 
     const handleClick = e => {
         setShowForm(!showForm);
@@ -91,7 +93,7 @@ const ArticleForm = props => {
                                 type="button"
                                 id="saveArticleButton"
                                 disabled={isLoading}
-                                onClick={constructNewArticle}
+                                onClick={constructNewArticle, handleClick}
                             >Save Article</button>
                             <input type="reset" defaultValue="Reset" />
                         </div>
