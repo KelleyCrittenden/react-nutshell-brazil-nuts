@@ -28,13 +28,19 @@ const TaskForm = props => {
         setShowForm(!showForm)
     }
 
+    const clearTaskForm
+
 
     const constructNewTask = e => {
         e.preventDefault();
         if (task.name === "" || task.dueDate === "") {
         window.alert("Please input a name and date for this task");
         } else {
-        setIsLoading(true);
+            //clearing input fields once submit button is pushd
+          clearTaskForm();
+            //hiding Task From when submit button is pushed
+          setShowForm(!showForm)
+          setIsLoading(true);
 
         TaskManager.post(task)
         .then(() => {props.getTasks()
@@ -88,7 +94,7 @@ const TaskForm = props => {
               type="button"
               disabled={isLoading}
               onClick={constructNewTask}
-              onClick={handleClick}
+              //onClick={handleClick}
             >Submit</button>
 
           </div>
