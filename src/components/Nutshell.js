@@ -1,7 +1,7 @@
 import React from "react";
+import Dashboard from "./Dashboard";
 import "./Nutshell.css";
 //import Login from "./auth/Login"
-import ApplicationViews from "./Dashboard"
 
 
 
@@ -21,10 +21,12 @@ import ApplicationViews from "./Dashboard"
 
 // export default Nutshell;
 
-const Nutshell = () => {
-  return (
+const Nutshell = (props) => {
+return (
+    
     <>
-    <ApplicationViews />
+      <Dashboard
+      { ...props } />
     </>
   );
 };

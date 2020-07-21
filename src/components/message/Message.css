@@ -10,6 +10,7 @@
   
   .card-content {
     padding: .5em;
+    display: inline-flex
   }
   
   .card-content h3 {
@@ -34,7 +35,8 @@
     color: cornsilk;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+   
+    justify-self: right;
     font-size: 14px;
     padding: .5em;
     border-radius: 2px;

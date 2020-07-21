@@ -1,20 +1,27 @@
-import { Route } from 'react-router-dom';
-import React from 'react';
-import TaskList from './task/TaskList';
+import { Route } from "react-router-dom";
+import React from "react";
+import ArticleList from "./article/ArticleList";
+import MessageList from "./message/MessageList";
+import TaskList from "./task/TaskList";
 
-
-const ApplicationViews = () => {
+const Dashboard = () => {
     return (
-        <React.Fragment>
-            <Route
-                path='/'
-                render={() => {
-                    return <>
-                    <TaskList />
-                    </>
-                }}/>
-        </React.Fragment>
-    );
-};
-export default ApplicationViews;
+		<React.Fragment>
 
+			<Route
+				exact path="/"
+				render={props => {
+					return <> 
+                    <MessageList {...props} />
+					<ArticleList
+					{ ...props } />
+                    <TaskList {...props} />
+                    </>
+                    
+				}}/>
+            
+        </React.Fragment>
+	);
+};
+
+export default Dashboard;
