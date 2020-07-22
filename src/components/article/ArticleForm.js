@@ -10,23 +10,26 @@ const ArticleForm = props => {
         url: "",
         timestamp:  new Date().toISOString()
     });
-    const [isLoading, setIsLoading] = useState(false);
+
+
     //   isLoading is a boolean value that will indicate whether or not the component is loading. A value of true should disable the button and a value of false should enable it. By putting isLoading in the component's state, we can trigger a re-render by changing its value.
+    const [isLoading, setIsLoading] = useState(false);
 
-
+    // This is setting the state of showForm to "false". Because we want to hide the form when the page loads. And then reveal it when the user clicks the button. It works in combination with handleClick (found a few lines down)
     const [showForm, setShowForm] = useState(false);
 
-    // handleFieldChange watches the 
+    // ** handleFieldChange watches the input fields for any change and triggers the useState to re-render. You will need to set this function inside the tag (in the rendered return) of each input you wish to monitor. It is added with this: 
+    // onChange={handleFieldChange}
     const handleFieldChange = e => {
         const stateToChange = { ...article };
         stateToChange[e.target.id] = e.target.value;
         setArticle(stateToChange);
     };
 
-
+    // ** handleClick is triggered by a click event. It creates a show/hide toggle feature that shows/hides an elment. To create this functionality you need to place this: className={ showForm ? 'show':'hidden'}  inside the tag of the element you wish to toggle. Then add a css selector class of  ".hidden" and set the display property to "display: none".
     const handleClick = e => {
         setShowForm(!showForm);
-    }
+    };
 
     /*  Local method for validation, set loadingStatus, create article object, invoke the ArticleManager post method, and redirect to the full article list */
 
@@ -47,7 +50,6 @@ const ArticleForm = props => {
                 .then(() => {
                     props.getArticles()
                     setIsLoading(false)
-
                 });
         }
     };
@@ -93,7 +95,7 @@ const ArticleForm = props => {
                                 type="button"
                                 id="saveArticleButton"
                                 disabled={isLoading}
-                                onClick={constructNewArticle, handleClick}
+                                onClick={constructNewArticle}
                             >Save Article</button>
                             <input type="reset" defaultValue="Reset" id="resetButton"/>
                         </div>

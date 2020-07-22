@@ -8,19 +8,18 @@ const FriendCard = (props) => {
         <>
             <div className="card">
                 <div className="card-content">
-                    {/* <img src={(props.user.image)} alt="My Friend"/> */}
+                    {/* <img src={(props.friend.user.image)} alt="My Friend"/> */}
                     <h3>
-                        <span className="card-friendname">{(props.friend.username)}</span>
+                        <span className="card-friendname">{(props.friend.user.username)}</span>
                     </h3>
-                    {(props.friend.username)}
                 </div>
                 <div>
-                    <button
-                        className="delete" 
-                        type="button" 
-                        onClick={() => props.deleteFriend(props.friend.id)}
-                        >Delete
-                    </button>
+                <button
+                    className="delete" 
+                    type="button" 
+                    onClick={() => props.deleteFriend(props.friend.userId)}
+                    >Delete
+                </button>
                 </div>
             </div>
         </>    

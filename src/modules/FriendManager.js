@@ -16,6 +16,23 @@ export default {
         return fetch(`${remoteURL}/friends/${id}`, {
             method: "DELETE"
         }).then(result => result.json())
+    },
+    addNewFriend: (newFriend) => {
+        return fetch(`${remoteURL}/friends`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newFriend),
+        });
+    },
+    // API call to get all users
+    getAllUsers() {
+        return fetch(`${remoteURL}/users`)
+            .then(result => result.json())
+    },
+    getFriendsData: (currentUserId) => {
+        return fetch(`${remoteURL}/friends?followingId=${currentUserId}&_expand=user`)
+            .then(friends => friends.json())
     }
-
 }

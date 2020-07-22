@@ -11,13 +11,21 @@ const Dashboard = () => {
 			<Route
 				exact path="/"
 				render={props => {
-					return <> 
-                    <MessageList {...props} />
-					<ArticleList
-					{ ...props }/>
-					<FriendList 
-					{ ...props } />
+					return (
+					<>
+						
+							<div className="user-content-container-main">
+								<MessageList {...props} />
+								<ArticleList
+								{ ...props }/>
+							</div>	
+							<div className="user-content-container-friends">
+								<FriendList 
+								{ ...props } />
+							</div>
+							
                     </>
+					)
 				}}/>
             
         </React.Fragment>

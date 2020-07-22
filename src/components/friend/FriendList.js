@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FriendCard from "./FriendCard";
 import FriendManager from "../../modules/FriendManager";
+import FriendForm from "./FriendForm"
 
 
 // This component will initiate the FriendManager getAll() call, hold on to the returned data, and then render the <FriendCard /> component for each friend.
@@ -10,7 +11,7 @@ const FriendList = props => {
     const [friends, setFriends] = useState([]);
 
     const getFriends = () => {
-        FriendManager.getAll()
+        FriendManager.getFriendsData(1)
         .then(friendsFromAPI => {
             setFriends(friendsFromAPI);
         });
@@ -18,10 +19,9 @@ const FriendList = props => {
 
     const deleteFriend = id => {
         FriendManager.delete(id)
-        .then(() => FriendManager.getAll()
-            .then(setFriends));
+        .then(() => getFriends()
         
-    }
+        )}
 
     useEffect(() => {
         getFriends();
@@ -32,10 +32,10 @@ const FriendList = props => {
 
             <>  
                 {/* Add the <ArticleForm> tag here in the rendered return in the ArticleList component. And then use  getArticles={getArticles}  as a key/value pair. *Do not call the function here*   */}
-                {/* <FriendForm
+                <FriendForm
                     getFriends={getFriends}
-                    /> */}
-                <div className="container-cards">
+                    />
+                <div className="container-friend-cards">
                     {friends.map(friend =>
                         <FriendCard
                             key={friend.id}

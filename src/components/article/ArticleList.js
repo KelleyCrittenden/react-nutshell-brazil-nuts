@@ -11,17 +11,17 @@ const ArticleList = (props) => {
     const [articles, setArticles] = useState([]);
 
     const getArticles = () => {
-        
+
         ArticleManager.getAll()
-        .then(articlesFromAPI => {
-            setArticles(articlesFromAPI);
-        }); 
+            .then(articlesFromAPI => {
+                setArticles(articlesFromAPI);
+            });
     }
-    
+
     const deleteArticle = id => {
         ArticleManager.delete(id)
-        .then(() => ArticleManager.getAll()
-        .then(setArticles));
+            .then(() => ArticleManager.getAll()
+                .then(setArticles));
     }
 
     useEffect(() => {
@@ -31,19 +31,19 @@ const ArticleList = (props) => {
     // Use map() to "loop over" the articles array to show a list of article cards
     return (
 
-        <>  
+        <>
             {/* Add the <ArticleForm> tag here in the rendered return in the ArticleList component. And then use  getArticles={getArticles}  as a key/value pair. *Do not call the function here*   */}
             <ArticleForm
                 getArticles={getArticles}
-                />
+            />
             <div className="container-cards">
                 {articles.map(article =>
                     <ArticleCard
                         key={article.id}
                         article={article}
                         deleteArticle={deleteArticle}
-                        { ...props }
-                    />    
+                        {...props}
+                    />
                 )}
             </div>
         </>

@@ -25,5 +25,5 @@ export default {
             },
             body: JSON.stringify(newArticle)
         }).then(data => data.json())
-    },
+    }
 }
