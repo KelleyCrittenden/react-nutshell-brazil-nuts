@@ -18,8 +18,8 @@
 
 
         //Function to clear form field after each click
-        const clearInputs = () => {
-            props.article = ""
+        // const clearInputs = () => {
+        //     props.article = ""
     
-        }
-        clearInputs();
+        // }
+        // clearInputs();
