@@ -5,9 +5,10 @@ const EventEditForm = props => {
     const activeUserId = 1;
 
     const [event, setEvent] = useState({
-        name: "",
-        venue: "",
-        date: "",
+        id: props.id,
+        name: props.name,
+        venue: props.venue,
+        date: props.date,
         userId: activeUserId
         // userId: sessionStorage.getItem("userId")
     });
@@ -24,7 +25,7 @@ const EventEditForm = props => {
         setIsLoading(true);
 
         const editedEvent = {
-        id: props.match.params.eventId,
+        id: event.id,
         name: event.name,
         venue: event.venue,
         date: event.date,
@@ -35,11 +36,11 @@ const EventEditForm = props => {
     };
 
     useEffect(() => {
-        API.edit(props.match.params.eventId).then(event => {
+        API.edit(props.match.params.id).then(event => {
         setEvent(event);
         setIsLoading(false);
         });
-    }, []);
+    }, [props.match.params.id]);
 
   return (
         <>
@@ -83,7 +84,7 @@ const EventEditForm = props => {
                 required
                 onChange={handleFieldChange}
                 id="userId"
-                value={event.userId}
+                value={event.activeUserId}
                 />
             
             <div className="alignRight">

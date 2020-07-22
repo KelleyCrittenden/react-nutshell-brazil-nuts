@@ -16,7 +16,6 @@ const EventList = props => {
 
     const getEvents = (num) => {
         return API.getWithId(num).then(eventsFromAPI => {
-            console.log(eventsFromAPI)
         sortEvents(eventsFromAPI);
         setEvents(eventsFromAPI);
         });
@@ -35,7 +34,6 @@ const EventList = props => {
         getEvents(activeUserId);
     }, []);
 
-    console.log(events)
 
     return (
         <>

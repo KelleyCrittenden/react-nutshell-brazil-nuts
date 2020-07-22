@@ -30,7 +30,7 @@ const EventForm = props => {
         } else {
         setIsLoading(true);
         API.save(event, "events").then(() => 
-        {props.getEvents()
+        {props.getEvents(activeUserId)
         setIsLoading(false)});
         }
     };

@@ -1,15 +1,17 @@
 import React from "react";
 import EventEditForm from "./EventEditForm"
+import API from "../../modules/EventManager"
 
-const EventCard = props => {
+const EventCard = (props) => {
   return (
-    <div className="eventCard-content">
-      <div>
+    <div className="event-container-cards">
+      <div className="inside-event-card">
         <div>{props.event.name}</div>
         <div>{props.event.venue}</div>
         <div>{props.event.date}</div>
         <div className="eventCRUDButtons">
-        <button
+        <div>
+          <button
           type="button" className="eventEditButton"
           onClick={EventEditForm}
         >
@@ -21,6 +23,7 @@ const EventCard = props => {
         >
           Delete Event
         </button>
+          </div>
         </div>
       </div>
     </div>
