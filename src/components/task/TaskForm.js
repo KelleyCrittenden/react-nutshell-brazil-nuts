@@ -28,17 +28,13 @@ const TaskForm = props => {
         setShowForm(!showForm)
     }
 
-    const clearTaskForm
-
-
+            //click function that creates new task into the database
     const constructNewTask = e => {
         e.preventDefault();
         if (task.name === "" || task.dueDate === "") {
         window.alert("Please input a name and date for this task");
         } else {
-            //clearing input fields once submit button is pushd
-          clearTaskForm();
-            //hiding Task From when submit button is pushed
+            //hiding Task Form when submit button is pushed
           setShowForm(!showForm)
           setIsLoading(true);
 

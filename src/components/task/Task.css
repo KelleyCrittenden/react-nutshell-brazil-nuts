@@ -1,4 +1,4 @@
-.card {
+.taskCard {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -8,18 +8,18 @@
     flex: 0 1 24%;
   }
   
-  .card-content {
+  .taskCard-content {
     padding: .5em;
   }
   
-  .card-content h3 {
+  .taskCard-content h3 {
     margin-top: 0;
     margin-bottom: .5em;
     font-weight: bold;
     color: rgb(43, 112, 241);
   }
   
-  .card-content p {
+  .taskCard-content p {
     font-size: 80%;
     color: darkslategrey;
   }
@@ -28,7 +28,7 @@
     color: darkslategrey;
   }
   
-  .card button {
+  .taskCard button {
     background-color: cornflowerblue;
     border: none;
     color: cornsilk;
@@ -42,6 +42,6 @@
     width: 100%;
   }
   
-  .card button:hover {
+  .taskCard button:hover {
     background-color: darkblue;
   }

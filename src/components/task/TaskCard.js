@@ -19,7 +19,7 @@ const TaskCard = props => {
         
     {props.task.completed ? null : 
 
-    <div className="card">
+    <div className="taskCard">
 
       
       <div className="card-content">
