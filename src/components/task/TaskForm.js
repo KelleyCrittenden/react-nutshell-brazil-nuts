@@ -1,4 +1,4 @@
-//Creating an form for the user to add a new task
+//Creating a form for the user to add a new task
 //Created by Kelley Crittenden
 
 
@@ -28,13 +28,15 @@ const TaskForm = props => {
         setShowForm(!showForm)
     }
 
-
+            //click function that creates new task into the database
     const constructNewTask = e => {
         e.preventDefault();
         if (task.name === "" || task.dueDate === "") {
         window.alert("Please input a name and date for this task");
         } else {
-        setIsLoading(true);
+            //hiding Task Form when submit button is pushed
+          setShowForm(!showForm)
+          setIsLoading(true);
 
         TaskManager.post(task)
         .then(() => {props.getTasks()
@@ -88,7 +90,7 @@ const TaskForm = props => {
               type="button"
               disabled={isLoading}
               onClick={constructNewTask}
-              onClick={handleClick}
+              //onClick={handleClick}
             >Submit</button>
 
           </div>

@@ -8,6 +8,7 @@ import TaskForm from "./TaskForm"
 
     //Setting state as initial empty array
 const TaskList = (props) => {
+
   const [tasks, setTasks] = useState([]);
 
     //getting all the Tasks from the API
@@ -33,8 +34,8 @@ const TaskList = (props) => {
             {/* new task form, hidden */}
         <TaskForm 
             getTasks={getTasks} />
-
-        <div 
+        <br></br>
+        <div id="taskList"
             //mapping over tasks to show a list all the tasks in the database
             className="container-cards">
             {tasks.map(task => <TaskCard 

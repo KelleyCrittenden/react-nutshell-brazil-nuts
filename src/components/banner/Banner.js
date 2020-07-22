@@ -15,9 +15,9 @@ const Banner = props => {
       <h1 className="site-title">
         Nutshell
       </h1>
-      <span>
+      {/* <span>
         <img src={require("./Nutshell.png")} alt="logo" className="logoLogin" />
-      </span>
+      </span> */}
           <h3>
             <span 
               className="nav-link" 

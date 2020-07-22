@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import FriendManager from "../../modules/FriendManager";
 import "./FriendForm.css"
 
-
 const FriendForm = props => {
     const [friend, setFriend] = useState({
         
