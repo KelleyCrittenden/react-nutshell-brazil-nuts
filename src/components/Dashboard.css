@@ -1,3 +1,23 @@
 .MainBanner {
     max-height: 8em;
 }
+
+
+.topContainer {
+    display: flex;
+    margin-top: 2em;
+    
+}
+
+.columnLeft {
+    flex: 1;
+    margin-right: 1em;
+}
+
+.columnRight{
+    flex: 3;
+}
+
+.articleRow {
+    display: inline-flex;
+}

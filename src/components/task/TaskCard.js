@@ -29,11 +29,6 @@ const TaskCard = props => {
         </h3>
 
         <p>Complete by: {props.task.dueDate}</p>
-        <button 
-            type="button" 
-            onClick={() => props.deleteTask(props.task.id)}>
-            Delete</button>
-
         <input type="checkbox"
           required
           className="forms-control"
@@ -43,6 +38,12 @@ const TaskCard = props => {
         />
 
         <label>Completed</label>
+        <button 
+            type="button" 
+            onClick={() => props.deleteTask(props.task.id)}>
+            Delete</button>
+
+        
 
       </div>
     </div>}

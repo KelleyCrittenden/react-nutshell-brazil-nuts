@@ -1,4 +1,11 @@
+.messageList {
 
+  vertical-align: bottom;
+ 
+}
+.messageDialog {
+  overflow: scroll;
+}
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -25,6 +32,7 @@
     font-size: 80%;
     color: darkslategrey;
     padding-left: 2em;
+    padding-right: 10em;
     
   }
   
@@ -32,7 +40,7 @@
     color: darkslategrey;
   }
   
-  .card button {
+  .Messagebutton {
     background-color: cornflowerblue;
     
     color: cornsilk;
@@ -45,6 +53,7 @@
     margin: .1em;
     width: 100%;
     display: inline-flex;
+    justify-self: flex-end;
     
   }
   

@@ -18,6 +18,14 @@ nav .container {
   margin-bottom: 0;
 }
 
+img {
+  display: flex ;
+justify-items: center;
+padding-left: 15em;
+width: 100%;
+height: auto;
+}
+
 nav .container li {
   flex: 1;
   padding: 10px;

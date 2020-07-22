@@ -31,9 +31,8 @@ const MessageCard = (props) => {
   return (
     <div className="card">
       <div className="card-content">
-        <h3><span className="card-message">
-        {props.message.user.username}:
-        </span></h3> <p><span>{props.message.message}</span></p>
+        <h3><span className="card-message">{props.message.user.username}: </span></h3> 
+        <p><span>{props.message.message}</span></p>
         {/* if userId of the message is eqaul to UserId of the sessionstorage show edit else show add to friend */}
         {simulatedUser.id === props.message.userId ?  
          (

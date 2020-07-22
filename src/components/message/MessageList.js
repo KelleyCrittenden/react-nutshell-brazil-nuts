@@ -29,7 +29,7 @@ const MessageList = (props) => {
     //display MessageForm Component as a child element of MessageList, making sure to include the props and the function to re-render the list by fetching is redeclaring the setMessage(invoked with the response)
     return (
         <div className="messageList">
-        <div>
+        <div className="messageDialog">
           {messages.map(message => 
           <MessageCard key={message.id} message={message} {...props} getMessages={getMessages}/>)}
         </div>
