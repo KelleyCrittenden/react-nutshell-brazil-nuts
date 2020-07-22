@@ -24,7 +24,7 @@ const TaskCard = props => {
       
       <div className="taskCard-content">
 
-        <h3>To Do: 
+        <h3>To Do: <br></br>
             <span className="card-taskName"> {props.task.name}</span>
         </h3>
 

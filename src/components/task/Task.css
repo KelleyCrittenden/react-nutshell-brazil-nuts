@@ -29,6 +29,11 @@
   .content-taskName {
     color: darkslategrey;
   }
+
+  .card-taskName {
+    font-size: 80%;
+    color: darkslategrey;
+  }
   
   .taskCard button {
     background-color: cornflowerblue;
