@@ -10,6 +10,8 @@
   
   .taskCard-content {
     padding: .5em;
+    display: flex;
+    flex-direction: column;
   }
   
   .taskCard-content h3 {

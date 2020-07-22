@@ -34,7 +34,7 @@ const TaskList = (props) => {
             {/* new task form, hidden */}
         <TaskForm 
             getTasks={getTasks} />
-
+        <br></br>
         <div id="taskList"
             //mapping over tasks to show a list all the tasks in the database
             className="container-cards">

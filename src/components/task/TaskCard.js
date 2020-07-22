@@ -22,10 +22,10 @@ const TaskCard = props => {
     <div className="taskCard">
 
       
-      <div className="card-content">
+      <div className="taskCard-content">
 
         <h3>To Do: 
-            <span className="card-taskName">{props.task.name}</span>
+            <span className="card-taskName"> {props.task.name}</span>
         </h3>
 
         <p>Complete by: {props.task.dueDate}</p>
