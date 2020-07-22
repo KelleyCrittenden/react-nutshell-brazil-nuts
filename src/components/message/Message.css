@@ -1,5 +1,6 @@
 .messageList {
-  border: 4em, solid, black;
+  
+  background-color: red;
 }
 .card {
     /* Add shadows to create the "card" effect */
@@ -26,9 +27,11 @@
   .card-content p {
     font-size: 80%;
     color: darkslategrey;
+    padding-left: 2em;
+    
   }
   
-  .content-employeename {
+  .content-message {
     color: darkslategrey;
   }
   
@@ -38,13 +41,15 @@
     color: cornsilk;
     text-align: center;
     text-decoration: none;
-   
-    justify-self: right;
+    
     font-size: 14px;
     padding: .5em;
     border-radius: 2px;
     margin: .1em;
     width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+    
   }
   
   .card button:hover {

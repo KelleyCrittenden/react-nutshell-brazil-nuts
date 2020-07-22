@@ -4,12 +4,10 @@ import Banner from "./banner/Banner";
 import ArticleList from "./article/ArticleList";
 import MessageList from "./message/MessageList";
 import TaskList from "./task/TaskList";
-
+import "./Dashboard.css"
 const Dashboard = (props) => {
 	const hasUser = props.hasUser;
 	const setUser = props.setUser;
-	console.log("hasUser", hasUser)
-	console.log("setUser", setUser)
 
     return (
 		<React.Fragment>
@@ -21,7 +19,7 @@ const Dashboard = (props) => {
 					<div className="MainBanner">
 						<Banner {...props} setUser={setUser} hasUser={hasUser} />
 					</div>
-					<div>
+					<div className="MiddleContent">
                     <MessageList {...props} />
 					</div>
 					<ArticleList

@@ -54,6 +54,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+
 }
 
 
@@ -62,3 +63,4 @@ img {
     flex-direction: column-reverse;
     overflow: scroll;
 }
+

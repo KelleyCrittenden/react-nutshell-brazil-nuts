@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
 import MessageManager from "../../modules/MessageManager";
-import './Message.css'
+import styles from "./Message.css"
 
 //Created by: Brett Stoudt
 //MessageList is the parent component of MessageCard & MessageForm
@@ -29,15 +29,15 @@ const MessageList = (props) => {
     //display all messageCards created as a child element of MessageList
     //display MessageForm Component as a child element of MessageList, making sure to include the props and the function to re-render the list by fetching is redeclaring the setMessage(invoked with the response)
     return (
-        <>
         <div className="messageList">
+        <div>
           {messages.map(message => 
           <MessageCard key={message.id} message={message} {...props} getMessages={getMessages}/>)}
         </div>
         <section className="section-content">
           <MessageForm {...props} getMessages={getMessages} />
         </section>
-      </>
+      </div>
     )
 }
 
