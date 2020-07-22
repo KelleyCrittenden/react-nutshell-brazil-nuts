@@ -5,8 +5,24 @@ small {
   header {
     background-color: darkblue;
     border: cornflowerblue solid 3px;
+    max-height: 5em;
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: cornsilk;
+    box-sizing: border-box;
+    
+
   }
   
+  .logoLogin {
+max-width: 15em;
+max-height: 10em;
+ float: right;
+ 
+}
+
   .site-title {
     color: ghostwhite;
     text-align: center;
@@ -18,7 +34,7 @@ small {
     margin-bottom: 0;
   }
   
-  nav .container li {
+  nav .container {
     flex: 1;
     padding: 10px;
     text-align: center;

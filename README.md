@@ -1,4 +1,39 @@
-# Nutshell: The Information Dashboard
+# React Group Project: Nutshell
+
+Our Group was tasked with creating a social media app using the criteria listed below and under the issues tab.
+
+Concepts covered in this project include React, JSX, JavaScript, CSS, session storage, creating a JSON database, posting/editing/deleting the data in the database with forms and event listeners on the DOM, and associating that data with a userID.
+
+## Brett Derrington
+- Created Event section
+- Fetched events data from database to display on DOM
+- Created new form with the ability to post new data to database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+- Added functionality to only show events belonging to logged in user
+
+## Zach McWhirter
+- Created News section
+- Created new form with the ability to post new data to database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+- Added functionality to only show news articles belonging to logged in user
+
+## Brett Stoudt
+- Created Login Section
+- Created log in functionality with mock validation by checking if email & password match with existing user object in database
+- App tracks which user is logged in site by utilizing session storage
+- Created messages section
+- Fetched message data from database to display on DOM
+- Created new form with the ability to post new data to database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+- Linked messages to show messages from other users
+
+## Kelley Crittenden
+- Created README file
+- Created Task section
+- Fetched task data from database to display on DOM
+- Created new form with the ability to post new data to database from DOM
+- Created delete button with the ability to delete events object in database from DOM
+- Created checkbox function that marked tasks as complete inside of the database
 
 ## Setup: Follow these steps exactly
 

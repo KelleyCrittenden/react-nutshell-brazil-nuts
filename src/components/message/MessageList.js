@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
 import MessageManager from "../../modules/MessageManager";
-import styles from "./Message.css"
 
 //Created by: Brett Stoudt
 //MessageList is the parent component of MessageCard & MessageForm

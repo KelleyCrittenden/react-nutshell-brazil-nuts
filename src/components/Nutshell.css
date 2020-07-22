@@ -4,7 +4,6 @@
 /*Typography
 --------------------------------------------------------------*/
 body,
-button,
 input,
 select,
 textarea {
@@ -15,6 +14,10 @@ textarea {
   background-color: silver;
 }
 
+button {
+  background-color: cornflowerblue;
+  color: white;
+}
 h1,
 h2,
 h3,
@@ -23,9 +26,9 @@ h5,
 h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
-}
+} 
 
-p {
+ p {
   margin-bottom: 1.5em;
   color: #d6fcff;
   color: darkslateblue;
@@ -46,6 +49,11 @@ img {
   height: auto;
 }
 
+.logoLogin {
+  width: min-content;
+  height: min-content;
+
+}
 .section-content {
   padding: 1.4em;
 }
@@ -59,8 +67,33 @@ img {
 
 
 .messagesList {
-    display: flex;
-    flex-direction: column-reverse;
-    overflow: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: scroll;
 }
 
+.event-container-cards:first-child {
+  font-weight: bold;
+  font-size: large;
+}
+
+.event-container-cards {
+  max-width: 40em;
+  padding: 4px;
+  margin: 2em auto;
+  border: 0 none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background: aliceblue;
+}
+
+.inside-event-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+button#showHiddenEventsButton { 
+  background-color: cornflowerblue;
+  color: cornsilk;
+}
