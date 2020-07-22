@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FriendManager from "../../modules/FriendManager";
 import "./FriendForm.css"
-import FriendCard from "./FriendCard"
 
 const FriendForm = props => {
     const [friend, setFriend] = useState({
@@ -70,12 +69,12 @@ const FriendForm = props => {
                 Find Friends
             </button>
             <div className={showForm ? 'show' : 'hidden'}>
-                <label for="friend-select">Choose a Friend:</label>
+                <label htmlFor="friend-select">Choose a Friend:</label>
                 <select name="friends"
                     id="username"
                     onChange={handleFieldChange} >
                     <option value="">--Select a Friend--</option>
-                    {users.map(user => <option value={user.username}>{user.username}</option>)}
+                    {users.map(user => <option key={user.id} value={user.username}>{user.username}</option>)}
                 </select>
             </div>
             <button
