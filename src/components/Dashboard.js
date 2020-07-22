@@ -19,8 +19,8 @@ const Dashboard = (props) => {
 					return <> 
 					<Banner {...props} setUser={setUser} hasUser={hasUser} />
                     <MessageList {...props} />
-					<ArticleList
-					{ ...props } />
+					<FriendList {...props} />
+					<ArticleList { ...props } />
 					<EventList {...props} />
                     <TaskList {...props} />
                     </>
