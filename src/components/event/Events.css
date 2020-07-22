@@ -1,0 +1,26 @@
+.event-container-cards:first-child {
+    font-weight: bold;
+    font-size: large;
+}
+
+.event-container-cards {
+    padding: 4px;
+    margin: 2em auto;
+    border: 0 none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background: aliceblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.inside-event-card {
+    flex: display;
+    
+}
+
+button#showHiddenEventsButton { 
+    background-color: cornflowerblue;
+    color: cornsilk;
+}
