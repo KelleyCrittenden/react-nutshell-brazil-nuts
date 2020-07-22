@@ -7,10 +7,10 @@ import "./Article.css";
 const ArticleCard = (props) => {
     return (
         <>
-            <div className="card">
-                <div className="card-content">
+            <div className="articleCard">
+                <div className="articleCard-content">
                     <h3>
-                        <span className="card-articleTitle">{(props.article.title)}
+                        <span className="articleCard-Title">{(props.article.title)}
                         </span>
                     </h3>
                     <p>

@@ -17,7 +17,7 @@ const FriendCard = (props) => {
                 <button
                     className="delete" 
                     type="button" 
-                    onClick={() => props.deleteFriend(props.friend.userId)}
+                    onClick={() => props.deleteFriend(props.friend.id)}
                     >Delete
                 </button>
                 </div>

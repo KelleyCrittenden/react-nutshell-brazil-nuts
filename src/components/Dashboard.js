@@ -22,11 +22,17 @@ const Dashboard = (props) => {
 					<div className="MainBanner">
 						<Banner {...props} setUser={setUser} hasUser={hasUser} />
 					</div>
-					<div className="MiddleContent">
-                    <MessageList {...props} />
-					<FriendList {...props} />
+					<div className="topContainer">	
+						<div className="columnLeft">
+							<FriendList {...props} />
+						</div>
+						<div className="columnRight">
+							<MessageList {...props} />
+						</div>
 					</div>
+					<div className="ArticlesRow">
 					<ArticleList { ...props } />
+					</div>
 					<EventList {...props} />
                     <TaskList {...props} />
                     </>
