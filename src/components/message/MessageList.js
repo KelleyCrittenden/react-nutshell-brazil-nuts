@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MessageCard from "./MessageCard";
 import MessageForm from "./MessageForm";
 import MessageManager from "../../modules/MessageManager";
-import '../Nutshell.css'
-
+import './Message.css'
 
 //Created by: Brett Stoudt
 //MessageList is the parent component of MessageCard & MessageForm
@@ -21,15 +20,14 @@ const MessageList = (props) => {
         });
     };
 
-    //If getMessages chanages, re-render
+    //If messages chanages, re-render by invoking getMessages()
     useEffect(() => {
-       // console.log("useEffect")
       getMessages()
     }, []);
 
     //create new array of messageCards using .map to organize our data for each object to be displayed
-    //display all messageCards created
-    //display MessageForm Component as a child element to MessageList, making sure to include the props and the function to re-render the list by fetching is redeclaring the setMessage(invoked with the response)
+    //display all messageCards created as a child element of MessageList
+    //display MessageForm Component as a child element of MessageList, making sure to include the props and the function to re-render the list by fetching is redeclaring the setMessage(invoked with the response)
     return (
         <>
         <div className="messageList">

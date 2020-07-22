@@ -8,6 +8,9 @@ import TaskList from "./task/TaskList";
 const Dashboard = (props) => {
 	const hasUser = props.hasUser;
 	const setUser = props.setUser;
+	console.log("hasUser", hasUser)
+	console.log("setUser", setUser)
+
     return (
 		<React.Fragment>
 
@@ -15,8 +18,12 @@ const Dashboard = (props) => {
 				exact path="/"
 				render={props => {
 					return <> 
-					<Banner {...props} setUser={setUser} hasUser={hasUser} />
+					<div className="MainBanner">
+						<Banner {...props} setUser={setUser} hasUser={hasUser} />
+					</div>
+					<div>
                     <MessageList {...props} />
+					</div>
 					<ArticleList
 					{ ...props } />
                     <TaskList {...props} />
