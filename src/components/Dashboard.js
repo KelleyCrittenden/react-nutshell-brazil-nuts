@@ -4,6 +4,7 @@ import Banner from "./banner/Banner";
 import ArticleList from "./article/ArticleList";
 import MessageList from "./message/MessageList";
 import TaskList from "./task/TaskList";
+import EventList from "./event/EventList";
 
 const Dashboard = (props) => {
 	const hasUser = props.hasUser;
@@ -19,6 +20,7 @@ const Dashboard = (props) => {
                     <MessageList {...props} />
 					<ArticleList
 					{ ...props } />
+					<EventList {...props} />
                     <TaskList {...props} />
                     </>
                     
