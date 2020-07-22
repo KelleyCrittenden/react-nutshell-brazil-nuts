@@ -5,11 +5,13 @@ import ArticleList from "./article/ArticleList";
 import FriendList from "./friend/FriendList";
 import MessageList from "./message/MessageList";
 import TaskList from "./task/TaskList";
+import "./Dashboard.css"
 import EventList from "./event/EventList";
 
 const Dashboard = (props) => {
 	const hasUser = props.hasUser;
 	const setUser = props.setUser;
+
     return (
 		<React.Fragment>
 
@@ -17,9 +19,13 @@ const Dashboard = (props) => {
 				exact path="/"
 				render={props => {
 					return <> 
-					<Banner {...props} setUser={setUser} hasUser={hasUser} />
+					<div className="MainBanner">
+						<Banner {...props} setUser={setUser} hasUser={hasUser} />
+					</div>
+					<div className="MiddleContent">
                     <MessageList {...props} />
 					<FriendList {...props} />
+					</div>
 					<ArticleList { ...props } />
 					<EventList {...props} />
                     <TaskList {...props} />

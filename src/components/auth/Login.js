@@ -22,6 +22,9 @@ const Login = props => {
       //form that will appear in DOM for user with input fields
   return (
     <form onSubmit={handleLogin}>
+      <div>
+        <img src={require("./Nutshell.png")} alt="logo" className="logoLogin"/>
+      </div>
       <fieldset>
 
         <h3>Please sign in</h3>

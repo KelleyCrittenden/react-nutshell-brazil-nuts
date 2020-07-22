@@ -1,3 +1,4 @@
+
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -23,27 +24,32 @@
   .card-content p {
     font-size: 80%;
     color: darkslategrey;
+    padding-left: 2em;
+    
   }
   
-  .content-employeename {
+  .content-message {
     color: darkslategrey;
   }
   
   .card button {
     background-color: cornflowerblue;
-    border: none;
+    
     color: cornsilk;
     text-align: center;
     text-decoration: none;
-   
     justify-self: right;
     font-size: 14px;
     padding: .5em;
     border-radius: 2px;
     margin: .1em;
     width: 100%;
+    display: inline-flex;
+    
   }
   
   .card button:hover {
     background-color: darkblue;
   }
+
+  

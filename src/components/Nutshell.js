@@ -19,9 +19,8 @@ const setUser = user => {
   console.log(isAuthenticated())
 };
 
-//function to determine component to render based on boolean value of isAuthenticated
-// function invoked in the return 
-//Created by Brett Stoudt
+//function to determine component to render based on boolean value of isAuthenticated and is invoked in the return 
+// Created by Brett Stoudt
 const vantagePoint = () => {
   if (!isAuthenticated()) {
     return <Login {...props} setUser={setUser}/>

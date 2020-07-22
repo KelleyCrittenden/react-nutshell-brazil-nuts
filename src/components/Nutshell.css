@@ -49,6 +49,11 @@ img {
   height: auto;
 }
 
+.logoLogin {
+  width: min-content;
+  height: min-content;
+
+}
 .section-content {
   padding: 1.4em;
 }
@@ -57,6 +62,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+
 }
 
 
@@ -91,4 +97,3 @@ button#showHiddenEventsButton {
   background-color: cornflowerblue;
   color: cornsilk;
 }
-
